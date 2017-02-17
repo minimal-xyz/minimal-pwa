@@ -1,0 +1,9 @@
+
+.main-text {
+  font-family: Helvetica Neue;
+  font-weight: 100;
+  font-size: 32;
+  color: hsl(240, 80%, 0%);
+  margin: 80px;
+  display: inline-block;
+}

@@ -1,0 +1,17 @@
+
+<head>
+  <title>Minimal PWA</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+  <div class="main-text">Minimal PWA, open Console for more~~~</div>
+  <script type="text/javascript">
+    navigator.serviceWorker && navigator.serviceWorker.register('sw.js').then(function(registration) {
+      console.log('Registered events at scope: ', registration.scope);
+    });
+    fetch('./data.json')
+  </script>
+</body>
