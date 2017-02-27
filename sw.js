@@ -6,7 +6,8 @@ var cacheList = [
   '/',
   "index.html",
   "main.css",
-  "e.png"
+  "e.png",
+  "pwa-fonts.png"
 ]
 
 self.addEventListener('install', function(e) {
