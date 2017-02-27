@@ -8,19 +8,23 @@
 </head>
 
 <body>
-  <h3>Revision 7</h3>
+  <div class="revision">Revision 8</div>
+  <img src="pwa-fonts.png">
   <div class="main-text">
-    Minimal PWA, open Console for more~~~
+    Minimal PWA, open Console for more!
   </div>
-  <div>
-    You are:
-    <span id="network-status" class="">Online</span>
+  <div class="network-message">
+    Network:
+    <span id="network-status" class="">Good</span>
   </div>
-  <img src="https://addyosmani.com/assets/getting-started-pwa/pwa-general-0-@1x.jpg">
   <script type="text/javascript">
-    navigator.serviceWorker && navigator.serviceWorker.register('sw.js').then(function(registration) {
-      console.log('Registered events at scope: ', registration.scope);
-    });
+    if (navigator.serviceWorker != null) {
+      navigator.serviceWorker.register('sw.js')
+      .then(function(registration) {
+        console.log('Registered events at scope: ', registration.scope);
+      });
+    }
+
     fetch('./data.json')
 
     var statusEl = document.querySelector('#network-status')

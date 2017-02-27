@@ -1,13 +1,39 @@
 
-.main-text {
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: Helvetica Neue;
-  font-weight: 100;
-  font-size: 32;
-  color: hsl(240, 80%, 0%);
-  margin: 80px;
-  display: inline-block;
+  font-weight: 200;
+  font-size: 20px;
+  background-color: #313131;
+  background-image: radial-gradient(ellipse farthest-corner at 45px 45px ,
+                        hsla(0,80%,100%,0.32) 0%,
+                        hsla(0,80%,80%,0.16) 60%,
+                        hsla(0,80%,80%,0) 95%);
+  color: #ccc;
+}
+
+.main-text {
+  white-space: nowrap;
 }
 
 img {
-  width: 200px;
+  width: auto;
+  max-width: 80%;
+}
+
+.revision {
+  font-weight: 200;
+  position: fixed;
+  top: 32px;
+  left: 32px;
+}
+
+.network-message {
+  font-weight: 200;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
 }

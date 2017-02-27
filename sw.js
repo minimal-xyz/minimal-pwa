@@ -1,12 +1,11 @@
 
 console.log('Script loaded!')
-var cacheStorageKey = 'minimal-pwa-7'
+var cacheStorageKey = 'minimal-pwa-8'
 
 var cacheList = [
   '/',
   "index.html",
   "main.css",
-  "manifest.json",
   "e.png"
 ]
 
@@ -26,13 +25,15 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate', function(e) {
   console.log('Activate event')
   e.waitUntil(
-    caches.keys().then(cacheNames => {
-      return cacheNames.filter(name => name != cacheStorageKey)
-    }).then(cachesToDelete => {
-      return Promise.all(cachesToDelete.map(name => {
-        return caches.delete(name)
-      }))
-    }).then(() => {
+    Promise.all(
+      caches.keys().then(cacheNames => {
+        return cacheNames.map(name => {
+          if (name !== cacheStorageKey) {
+            return caches.delete(name)
+          }
+        })
+      })
+    ).then(() => {
       console.log('Clients claims.')
       return self.clients.claim()
     })
