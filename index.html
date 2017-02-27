@@ -4,10 +4,13 @@
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="icon" href="/e.png" type="image/png" />
 </head>
 
 <body>
+  <h3>Revision 7</h3>
   <div class="main-text">Minimal PWA, open Console for more~~~</div>
+  <img src="https://addyosmani.com/assets/getting-started-pwa/pwa-general-0-@1x.jpg">
   <script type="text/javascript">
     navigator.serviceWorker && navigator.serviceWorker.register('sw.js').then(function(registration) {
       console.log('Registered events at scope: ', registration.scope);
